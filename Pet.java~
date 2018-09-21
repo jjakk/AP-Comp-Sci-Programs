@@ -1,0 +1,22 @@
+public class Pets{
+  
+  //Fields
+  
+  String type;
+  String breed;
+  String name;
+  
+  //Constructors
+  
+  public Pets(){
+    
+    type = null;
+    breed = null;
+    name = null;
+    
+  }
+  
+  //Methods
+  
+  
+}

@@ -1,4 +1,4 @@
-public class Greeting{
+public class OurPets{
 
   public static void main(String [] args){
   
