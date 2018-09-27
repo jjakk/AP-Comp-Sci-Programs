@@ -13,11 +13,27 @@ public class OurPets{
     
     Pet natalie = new Pet("Dog", "Golden Doodle", "Lincoln");
     
+    System.out.println(mrsWestervelt.getType());
+    
+    System.out.println(john.getBreed());
+    
+    System.out.println(natalie.getName());
+    
+    mrsWestervelt.changeType("cat");
+    
+    System.out.println(mrsWestervelt.getType());
+    
+    mrsWestervelt.changeBreed("poodle");
+    
+    System.out.println(mrsWestervelt.getBreed());
+    
+    mrsWestervelt.changeName("Spot");
+    
+    System.out.println(mrsWestervelt.getName());
+    
     System.out.println(mrsWestervelt);
     
-    System.out.println(john);
-    
-    System.out.println(natalie);
+    System.out.println();
   
   }
 

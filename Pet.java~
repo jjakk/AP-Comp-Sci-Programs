@@ -1,4 +1,10 @@
-public class Pets{
+/*
+ * This Class defines the attributes and actions of a pet.
+ * John Khachian
+ * 9/21/2018
+*/
+
+public class Pet{
   
   //Fields
   
@@ -8,15 +14,29 @@ public class Pets{
   
   //Constructors
   
-  public Pets(){
+  public Pet(String t){
     
-    type = null;
+    type = t;
     breed = null;
     name = null;
     
   }
   
+  public Pet(String t, String b, String n){
+  
+    type = t;
+    breed = b;
+    name = n;
+  
+  }
+  
   //Methods
   
+  //Accesor methods
+  
+  public String getType(){
+    return type;}
+  
+  //Mutator methods
   
 }
