@@ -1,13 +1,43 @@
 
-
+/* This is a program used to make digital cars
+ * John Khachian
+ * 9/27
+ */
 
 public class Car{
-
-  
-  
-  public Car(){
-  
-  
-  }
-
+	
+	//fields
+	
+	String model;
+	
+	int year;
+	
+	public Car(String m, int y){
+		
+		model = m;
+		
+		year = y;
+		
+	}
+	
+	//toString
+	
+	public String toString() {
+		
+		return model + ", " + year;
+		
+	}
+	
+	//Accessors
+	
+	public String getModel() {return model;}
+	
+	public String getYear() {return year;}
+	
+	//mutators
+	
+	public void changeModel(m) {model = m;}
+	
+	public void changeYear(y) {year = y;}
+	
 }

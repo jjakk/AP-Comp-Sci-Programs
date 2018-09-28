@@ -1,0 +1,21 @@
+
+/* This is a program used to organize digital cars
+ * John Khachian
+ * 9/27
+ */
+
+public class Car{
+	
+	public static void main(String [] args) {
+		
+		car john = new car("Tesla model s", 2015);
+		
+		car christian = new car("Ford Fusion", 2003);
+				
+		System.out.println(john);
+		
+		System.out.println(christian);
+		
+	}
+	
+}
