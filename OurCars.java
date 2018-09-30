@@ -8,9 +8,9 @@ public class OurCars{
  
  public static void main(String [] args) {
   
-  Car john = new Car("Tesla model s", 2015);
+  Car john = new Car("Model s", 2015);
   
-  Car christian = new Car("Ford Fusion", 2003);
+  Car christian = new Car("Fusion", 2003);
     
   System.out.println(john);
   

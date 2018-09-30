@@ -4,18 +4,18 @@
  * 9/27
  */
 
-public class Car{
-	
-	public static void main(String [] args) {
-		
-		car john = new car("Tesla model s", 2015);
-		
-		car christian = new car("Ford Fusion", 2003);
-				
-		System.out.println(john);
-		
-		System.out.println(christian);
-		
-	}
-	
+public class OurCars{
+ 
+ public static void main(String [] args) {
+  
+  Car john = new Car("Tesla model s", 2015);
+  
+  Car christian = new Car("Ford Fusion", 2003);
+    
+  System.out.println(john);
+  
+  System.out.println(christian);
+  
+ }
+ 
 }
