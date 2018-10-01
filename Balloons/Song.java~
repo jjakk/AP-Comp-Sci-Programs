@@ -1,0 +1,19 @@
+/* This is a program to keep track of songs
+ * John Khachian
+ * 10/1/18
+*/
+public class Song{
+  
+  //Fields
+
+  public song(String t, String a, double l){
+  
+    title = t;
+    
+    artist = a;
+    
+    length = l;
+  
+  }
+
+}
