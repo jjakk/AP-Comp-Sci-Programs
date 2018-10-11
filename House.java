@@ -7,15 +7,15 @@ public class House{
   
   //fields
   
-  int number;
+  private int number;
   
-  String street;
+  private String street;
   
-  String color;
+  private String color;
   
-  int bedrooms;
+  private int bedrooms;
   
-  double bathrooms;
+  private double bathrooms;
   
   //constructors
   

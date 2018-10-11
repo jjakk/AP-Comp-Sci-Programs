@@ -7,9 +7,9 @@ public class Car{
  
  //fields
  
- String model;
+ private String model;
  
- int year;
+ private int year;
  
  //Constructor
  

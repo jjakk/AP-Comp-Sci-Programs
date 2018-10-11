@@ -8,9 +8,9 @@ public class Pet{
   
   //Fields
   
-  String type;
-  String breed;
-  String name;
+  private String type;
+  private String breed;
+  private String name;
   
   //Constructors
   

@@ -18,6 +18,20 @@ public class House{
   double bathrooms;
   
   //constructors
+  
+  public House(int n, String s){
+  
+    number = n;
+    
+    street = s;
+    
+    color = null;
+    
+    bedrooms = 0;
+    
+    bathrooms = 0;
+  
+  }
 
   public House(int n, String s, String c, int be, double ba){
   
@@ -40,6 +54,12 @@ public class House{
   public String getColor(){return  color;}
   public int getBedrooms(){return  bedrooms;}
   public double getBathrooms(){return  bathrooms;}
+  
+  public String toString(){
+  
+    return number + ", " + street + ", " + color + ", " + bedrooms + ", " + bathrooms;
+    
+  }
   
   //Mutators
   

@@ -34,9 +34,20 @@ public class Pet{
   
   //Accesor methods
   
-  public String getType(){
-    return type;}
+  public String getType(){return type;}
+  public String getBreed(){return breed;}
+  public String getName(){return name;}
+  
+  public String toString(){
+  
+    return type + ", " + breed + ", " + name;
+  
+  }
   
   //Mutator methods
+  
+  public void changeType(String t){type = t;}
+  public void changeBreed(String b){breed = b;}
+  public void changeName(String n){name = n;}
   
 }
