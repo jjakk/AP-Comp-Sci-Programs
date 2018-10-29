@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class MyMath
+{
+  public static double milesToKm(int miles){  
+    return miles * 1.609344;
+  }
+  
+  public static double circumference(int radius){return Math.PI * 2 * radius;}
+  
+  public static boolean isLeapYear(int year){
+  
+    if(year % 4 == 0){
+    
+      return true;
+    
+    }
+    else{
+    
+      return false;
+    
+    }
+  
+  }
+  
+  public static void main(String[] args){
+    Scanner keyboard = new Scanner(System.in);    
+    System.out.print("This will convert miles to km. \nMiles = ");
+    int mi = keyboard.nextInt();
+    
+    System.out.println(mi + " miles = "+ milesToKm(mi)+ "km");  //notice no object
+  }
+}
