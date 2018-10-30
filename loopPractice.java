@@ -64,10 +64,14 @@ public class loopPractice{
     System.out.println("Enter a number : ");
     input = scan.nextInt();
     for(int i = 0; i < input; i++){
-    
-      if(input % i == 0){
-        
-        total += i;
+      
+      if(i != 0){
+      
+        if(input % i == 0){
+          
+          total += i;
+          
+        }
       
       }
     

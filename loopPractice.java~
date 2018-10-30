@@ -40,9 +40,52 @@ public class loopPractice{
       System.out.println();
     }
   }
+  private static void printCheckerboard(){
+    Scanner scan = new Scanner(System.in);
+    int input;
+    System.out.println("Enter an ending number : ");
+    input = scan.nextInt();
+    for(int i = 0; i < input; i++){
+      for(int j = 0; j < input; j++){
+        if(j % 2 == 0){
+          System.out.print("#");
+        }
+        else{
+          System.out.print("o");
+        }
+      }
+      System.out.println();
+    }
+  }
+  private static void perfectNum(){
+    Scanner scan = new Scanner(System.in);
+    int input;
+    int total = 0;
+    System.out.println("Enter a number : ");
+    input = scan.nextInt();
+    for(int i = 0; i < input; i++){
+    
+      if(input % i == 0){
+        
+        total += i;
+      
+      }
+    
+    }
+    if(total == input){
+    
+      System.out.println("it's perfect");
+      
+    }
+    else{
+    
+      System.out.println("It's not perfect");
+    
+    }
+  }
   public static void main(String [] args){
   
-    fizzBuzz();
+    perfectNum();
   
   }
 
