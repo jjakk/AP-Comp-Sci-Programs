@@ -21,16 +21,28 @@ public class loopPractice{
     int input;
     System.out.println("Enter an increment : ");
     input = scan.nextInt();
-    for(int i = 0;  i < 200; i++){
-    
-      
-    
+  }
+  private static void fizzBuzz(){
+    Scanner scan = new Scanner(System.in);
+    int input;
+    System.out.println("Enter an ending number : ");
+    input = scan.nextInt();
+    for(int i = 0; i < input; i++){
+      if(i % 3 == 0){
+        System.out.print("Fizz");
+      }
+      if(i % 5 == 0){
+        System.out.print("Buzz");
+      }
+      if(i % 5 != 0 && i % 3 != 0){
+        System.out.print(i);
+      }
+      System.out.println();
     }
   }
-
   public static void main(String [] args){
   
-    sumLimit();
+    fizzBuzz();
   
   }
 
