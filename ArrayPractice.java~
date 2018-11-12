@@ -1,0 +1,11 @@
+public class ArrayPractice{
+  
+  public static fillArray(){}
+
+  public static void main(String [] args){
+  
+    
+  
+  }
+
+}
