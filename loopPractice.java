@@ -87,6 +87,17 @@ public class loopPractice{
     System.out.println("Enter a number : ");
     input = scan.nextInt();
     for(int i = 0; i < input; i++){
+<<<<<<< HEAD
+=======
+      
+      if(i != 0){
+      
+        if(input % i == 0){
+          
+          total += i;
+          
+        }
+>>>>>>> d603ebd947384b64a577b714bf21792b5ddd5ab9
       
       if(i != 0){
       

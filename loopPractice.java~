@@ -69,6 +69,7 @@ public class loopPractice{
   }
   private static void perfectNum(){
 <<<<<<< HEAD
+<<<<<<< HEAD
     int number;
     int total = 0;
 <<<<<<< HEAD
@@ -109,6 +110,8 @@ public class loopPractice{
     mersenne();
     
 =======
+=======
+>>>>>>> d603ebd947384b64a577b714bf21792b5ddd5ab9
     Scanner scan = new Scanner(System.in);
     int input;
     int total = 0;
