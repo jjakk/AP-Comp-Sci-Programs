@@ -3,16 +3,20 @@
  * @author Laurie White
  * This is a revision of the version of April 2012
  */
-public class Magpie
-{
+public class Magpie{
  //Note: no fields or constructors
  /**
   * Get a default greeting  
   * @return a greeting
   */
- public String getGreeting()
- {
+ public String getGreeting(){
   return "Hello, let's talk.";
+ }
+ 
+ public String prepareStatement(String statement){
+   
+   return (statement.trim()).toLowerCase();
+   
  }
  
  /**

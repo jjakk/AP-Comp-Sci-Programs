@@ -20,27 +20,31 @@ public class Magpie
   * @param statement the user statement
   * @return a response based on the rules given
   */
- public String getResponse(String statement)
- {
+ public String getResponse(String statement){
   String response = "";
   //#1
   //call for #2
-  if (statement.indexOf("no") >= 0)
-  {
-   response = "Why so negative?";
+  
+  if((statement.trim()).length() != 0){ 
+    if (statement.indexOf("no") >= 0){
+      response = "Why so negative?";
+    }
+    else if (statement.indexOf("mother") >= 0
+               || statement.indexOf("father") >= 0
+               || statement.indexOf("sister") >= 0
+               || statement.indexOf("brother") >= 0)
+    {
+      response = "Tell me more about your family.";
+    }
+    else
+    {
+      response = getRandomResponse();
+    }
+    return response;
   }
-  else if (statement.indexOf("mother") >= 0
-    || statement.indexOf("father") >= 0
-    || statement.indexOf("sister") >= 0
-    || statement.indexOf("brother") >= 0)
-  {
-   response = "Tell me more about your family.";
+  else{
+    return "Say something please.";
   }
-  else
-  {
-   response = getRandomResponse();
-  }
-  return response;
  }
 
  /**
