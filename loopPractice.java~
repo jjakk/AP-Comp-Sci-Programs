@@ -68,8 +68,6 @@ public class loopPractice{
     }
   }
   private static void perfectNum(){
-<<<<<<< HEAD
-<<<<<<< HEAD
     int number;
     int total = 0;
 <<<<<<< HEAD
@@ -89,6 +87,17 @@ public class loopPractice{
     System.out.println("Enter a number : ");
     input = scan.nextInt();
     for(int i = 0; i < input; i++){
+<<<<<<< HEAD
+=======
+      
+      if(i != 0){
+      
+        if(input % i == 0){
+          
+          total += i;
+          
+        }
+>>>>>>> d603ebd947384b64a577b714bf21792b5ddd5ab9
       
       if(i != 0){
       
@@ -109,38 +118,5 @@ public class loopPractice{
     
     mersenne();
     
-=======
-=======
->>>>>>> d603ebd947384b64a577b714bf21792b5ddd5ab9
-    Scanner scan = new Scanner(System.in);
-    int input;
-    int total = 0;
-    System.out.println("Enter a number : ");
-    input = scan.nextInt();
-    for(int i = 0; i < input; i++){
-    
-      if(input % i == 0){
-        
-        total += i;
-      
-      }
-    
-    }
-    if(total == input){
-    
-      System.out.println("it's perfect");
-      
-    }
-    else{
-    
-      System.out.println("It's not perfect");
-    
-    }
-  }
-  public static void main(String [] args){
-  
-    perfectNum();
-  
->>>>>>> d603ebd947384b64a577b714bf21792b5ddd5ab9
   }
 }

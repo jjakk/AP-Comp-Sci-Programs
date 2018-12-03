@@ -42,7 +42,7 @@ public class StringPractice{
     
     last = "";
     
-    for(int i = 0; i < words.length; i++){
+    for(int i = 0; i < words.length - 1; i++){
     
       if(words[i].compareTo(last) > 0){
       
@@ -53,14 +53,12 @@ public class StringPractice{
       if(words[i].length() > longest.length()){
       
         longest = words[i];
-        
-        System.out.println("hj");
       
       }
     
     }
   
-    return "Last in alphabet : " + last + "\n Most letters : " + longest;
+    return "Last in alphabet : " + last + "\nMost letters : " + longest;
   
   }
 
@@ -70,7 +68,7 @@ public class StringPractice{
     
     System.out.println(convertName("Khachian, John"));
     
-    lastLongest("Hello my name is john ");
+    System.out.println(lastLongest("Hello my name is john "));
  
   }
 

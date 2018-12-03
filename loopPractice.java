@@ -70,8 +70,9 @@ public class loopPractice{
   private static void perfectNum(){
     int number;
     int total = 0;
-<<<<<<< HEAD
     int worked = 0;
+    int input;
+    Scanner scan = new Scanner(System.in);
     for(int i = 1; worked < 4; i++){
       number = i;
       total = 0;
@@ -83,31 +84,28 @@ public class loopPractice{
       if(total == number){
         System.out.println(number);
         worked += 1;
-=======
     System.out.println("Enter a number : ");
     input = scan.nextInt();
-    for(int i = 0; i < input; i++){
-<<<<<<< HEAD
-=======
+    for(int k = 0; k < input; k++){
       
-      if(i != 0){
+      if(k != 0){
       
-        if(input % i == 0){
+        if(input % k == 0){
+          
+          total += k;
+          
+        }
+      
+      if(k != 0){
+      
+        if(input % k == 0){
           
           total += i;
           
         }
->>>>>>> d603ebd947384b64a577b714bf21792b5ddd5ab9
-      
-      if(i != 0){
-      
-        if(input % i == 0){
-          
-          total += i;
-          
-        }
-      
->>>>>>> d603ebd947384b64a577b714bf21792b5ddd5ab9
+      }
+    }
+  }
       }
     }
   }

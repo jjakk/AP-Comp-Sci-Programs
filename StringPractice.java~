@@ -12,7 +12,7 @@ public class StringPractice{
   
   }
   
-  public static void lastLongest(String sentence){
+  public static String lastLongest(String sentence){
     
     String last = "";
     
@@ -20,9 +20,7 @@ public class StringPractice{
     
     for(int i = 0; i < sentence.length(); i++){
     
-      if(sentence.substring(i, i + 1) == " "){
-        
-        System.out.println(sentence.substring(i, i + 1));
+      if(sentence.substring(i, i + 1).equals(" ")){
       
         spaces++;
       
@@ -36,17 +34,33 @@ public class StringPractice{
       
       words[i] = sentence.substring(0, sentence.indexOf(" "));
       
-      sentence = sentence.substring(sentence.indexOf(" "), sentence.length());
+      sentence = sentence.substring(sentence.indexOf(" ") + 1, sentence.length());
       
     }
     
+    String longest = "";
+    
+    last = "";
+    
     for(int i = 0; i < words.length; i++){
     
-      System.out.println(words[i]);
+      if(words[i].compareTo(last) > 0){
+      
+        last = words[i];
+      
+      }
+      
+      if(words[i].length() > longest.length()){
+      
+        longest = words[i];
+        
+        System.out.println("hj");
+      
+      }
     
     }
   
-    //return "Last in alphabet : " + sentence + "\n Most letters : " + sentence;
+    return "Last in alphabet : " + last + "\n Most letters : " + longest;
   
   }
 
@@ -56,8 +70,8 @@ public class StringPractice{
     
     System.out.println(convertName("Khachian, John"));
     
-    lastLongest("Hello my name is john");
-  
+    lastLongest("Hello my name is john ");
+ 
   }
 
 }

@@ -14,6 +14,11 @@ public class MagpieRunner{
   Scanner keyboard = new Scanner (System.in);
   Magpie maggie = new Magpie();
   
+  System.out.print ("Whats your name");
+  String name = keyboard.nextLine();
+  
+  maggie.setName(name);
+  
   System.out.print (maggie.getGreeting());
   String statement = keyboard.nextLine();
   
