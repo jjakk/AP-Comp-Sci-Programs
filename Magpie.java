@@ -40,54 +40,52 @@ public class Magpie{
    statement = statement.replace(",", "");
    
    statement = statement.replace("?", "");
- 
-   if(statement.indexOf("no") >= 0){
    
-     if(statement.indexOf("no") == 0){
-     
-       if(statement.substring(statement.indexOf("no")+1, statement.indexOf("no") +2) == " "){
-       
-         return "Why so negative?";
-       
-       }
-       
-       else return "";
-     
-     }
-     
-     else if(statement.indexOf("no") + 2 == statement.length()){
-     
-       if(statement.substring(statement.indexOf("no") - 1, statement.indexOf("no")) == " "){
-         
-         return "Why so negative?";
-         
-       }
-       
-       else return "";
-     
-     }
-     
-     else{
-     
-       return "";
-     
-     }
+   if(statement.indexOf(" no ") >= 0){
+   
+     return "Why so negative?";
    
    }
    
-   else return "";
- 
+   else if(statement.indexOf("no ") == 0){
+   
+     return "Why so negative?";
+     
+   }
+   
+   else if(statement.indexOf(" no") == statement.length() - 3){
+   
+     return "Why so negative?";
+   
+   }
+   
+   else if(statement.indexOf("no") == 0 && statement.length() == 2){
+   
+     return "Why so negative?";
+   
+   }
+   
+   else{
+   
+     return "";
+   
+   }
+   
  }
+
+   
+ 
+ 
  
  private String checkFamily(String statement){
  
-   String [] family = {"mother", "father", "sister", "brother", "cousin"};
+   String [] family = {"mother", "father", "sister", "brother", "cousin", "dad"};
    
    String response = "";
    
    for(String i : family){
    
-     if (statement.indexOf(i) >= 0){
+     if (statement.indexOf(" " + i + " ") >= 0){
        response = "Tell me more about your family.";
      }
      
@@ -105,7 +103,7 @@ public class Magpie{
    
    for(String i : family){
    
-     if (statement.indexOf(i) >= 0){
+     if (statement.indexOf(" " + i + " ") >= 0){
        response = "Tell me more about your pet.";
      }
      
@@ -123,7 +121,7 @@ public class Magpie{
    
    for(String i : family){
    
-     if (statement.indexOf(i) >= 0){
+     if (statement.indexOf(" " + i + " ") >= 0){
        response = "Tell me more about your hobbies.";
      }
      

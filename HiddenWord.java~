@@ -1,0 +1,43 @@
+public class HiddenWord{
+
+  String word = null;
+  
+  String guess = null;
+  
+  String output = null;
+  
+  public HiddenWord(String w){
+  
+    word = w;
+  
+  }
+  
+  public String guessHint(String g){
+  
+    guess = g;
+    
+    if(word.length() != guess.length()) return "Not the same amount of characters";
+    
+    for(int i = 0; i < word.length(); i++){
+    
+      if(word.substring(i, i + 1) == guess.substring(i, i + 1)){
+      
+        output += word.substring(i, i + 1);
+        
+      }
+    
+    }
+    
+    return output;
+  
+  }
+  
+  public static void main(String [] args){
+    
+    HiddenWord puzzle = new HiddenWord("Hello");
+  
+    System.out.println(puzzle.guessHint("Hello"));
+  
+  }
+
+}

@@ -29,6 +29,54 @@ public class Magpie{
   * @return a response based on the rules given
   */
  
+ public static String findKeyWord(String statement){
+   
+   statement = statement.trim();
+   
+   String part = "";
+   
+   statement = statement.replace(".", "");
+   
+   statement = statement.replace(",", "");
+   
+   statement = statement.replace("?", "");
+   
+   if(statement.indexOf(" no ") >= 0){
+   
+     return "Why so negative?";
+   
+   }
+   
+   else if(statement.indexOf("no ") == 0){
+   
+     return "Why so negative?";
+     
+   }
+   
+   else if(statement.indexOf(" no") == statement.length() - 3){
+   
+     return "Why so negative?";
+   
+   }
+   
+   else if(statement.indexOf("no") == 0 && statement.length() == 2){
+   
+     return "Why so negative?";
+   
+   }
+   
+   else{
+   
+     return "";
+   
+   }
+   
+ }
+
+   
+ 
+ 
+ 
  private String checkFamily(String statement){
  
    String [] family = {"mother", "father", "sister", "brother", "cousin"};
@@ -96,6 +144,8 @@ public class Magpie{
     response = checkPets(statement);
     if(response != "") return response;
     response = checkHobby(statement);
+    if(response != "") return response;
+    response = findKeyWord(statement);
     if(response != "") return response;
     if(response == "") response = getRandomResponse();
     return name + ", " + response;
