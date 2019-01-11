@@ -1,0 +1,67 @@
+public class arrayPractice2{
+
+  public static void main(String [] args){
+  
+    arrayPractice2 object = new arrayPractice2();
+    
+    object.insert(8);
+    
+    object.print();
+  
+  }
+  
+  //Feilds
+  
+  public int [] mainArray = {1, 7, 12, 15, 18, 20, 21, 22, 0, 0, 0};
+  
+  public int [] newArry = new int[11];
+  
+  //Methods
+  
+  public void insert(int newNum){
+  
+    boolean found = false;
+    
+    for(int i = 0; i < mainArray.length; i++){
+    
+      if(!found){
+      
+        if(mainArray[i] > newNum){
+        
+          mainArray[i] = newNum;
+          
+          found = true;
+          
+        }
+      
+      }
+      
+      else{
+      
+        if(i != mainArray.length - 1)newArry[i + 1] = mainArray[i];
+      
+      }
+    
+    }
+  
+  }
+  
+  public void delete(){
+  
+    
+  
+  }
+  
+  public void print(){
+  
+    for(int i = 0; i < newArry.length; i++){
+    
+      if(i != newArry.length) System.out.print(newArry[i] + ", ");
+      
+    }
+    
+    System.out.println();
+  
+  }
+
+}

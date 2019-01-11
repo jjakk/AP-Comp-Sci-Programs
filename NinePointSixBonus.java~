@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+
+public class NinePointSixBonus{
+
+  public static void main(String [] args){
+  
+    Scanner scan = new Scanner(System.in);
+    
+    System.out.println("Enter a how many rows you would like : ");
+    
+    int rows = scan.nextInt();
+    
+    String [][] array = new String [rows][];
+    
+    for(int i = 0; i < array.length; i++){
+    
+      System.out.println("Enter how many Asterix : ");
+      
+      for(int j = 0; j < scan.nextInt(); j++){
+      
+        array[i][j] = "*";
+      
+      }
+    
+    }
+  
+  }
+
+}
