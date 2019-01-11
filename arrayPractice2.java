@@ -81,13 +81,13 @@ public class arrayPractice2{
   
   }
   
-  public void delete(int position){
+  public void delete(int target){
     
     boolean got = false;
   
     for(int i = 0; i < newArry.length; i++){
     
-      if(newArry[i] == position){
+      if(newArry[i] == target){
         
         got = true;
         
@@ -99,7 +99,7 @@ public class arrayPractice2{
       
         if(got){
         
-          newArry[i - 1] = mainArray[i - 1];
+          newArry[i - 1] = mainArray[i];
         
         }
       
