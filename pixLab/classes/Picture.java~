@@ -84,12 +84,19 @@ public class Picture extends SimplePicture
     return output; 
   }
   
+  private void zeroBlue(){
+  
+    //for(int i = 0; i < )
+  
+  }
+  
   /* Main method for testing - each class in Java can have a main method 
    */
-  public static void main(String[] args) 
-  {
+  public static void main(String[] args) {
+    
     Picture beach = new Picture("beach.jpg");
     beach.explore();
+    DigitalPicture p = new Picture();
     /*DigitalPicture photo = new Picture();
     SimplePicture photo2 = new Picture("beach.jpg");
     Picture photo3 = new SimplePicture(); 

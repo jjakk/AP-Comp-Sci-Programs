@@ -86,7 +86,22 @@ public class Picture extends SimplePicture
   
   private void zeroBlue(){
   
-    //for(int i = 0; i < )
+    Pixel [][] noBlue = this.getPixels2D();
+    for(Pixel [] row : noBlue)
+    for(Pixel individualPixel : row)
+      individualPixel.setBlue(0);
+  
+  }
+  
+  private void keepOnlyBlue(){
+  
+    Pixel [][] noBlue = this.getPixels2D();
+    for(Pixel [] row : noBlue)
+    for(Pixel individualPixel : row) {
+        individualPixel.setRed(0);
+            individualPixel.setGreen(0);
+    }
+        
   
   }
   
@@ -95,6 +110,7 @@ public class Picture extends SimplePicture
   public static void main(String[] args) {
     
     Picture beach = new Picture("beach.jpg");
+    beach.keepOnlyBlue();
     beach.explore();
     DigitalPicture p = new Picture();
     /*DigitalPicture photo = new Picture();

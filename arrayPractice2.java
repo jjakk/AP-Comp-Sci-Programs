@@ -8,7 +8,11 @@ public class arrayPractice2{
     
     object.insert(8);
     
+    object.print();
+    
     object.insert(13);
+    
+    object.print();
     
     object.delete(18);
     
