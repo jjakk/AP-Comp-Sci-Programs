@@ -1,0 +1,11 @@
+public class VendingCompany{
+
+  public static void main(String [] args){
+    
+    Vendor [] machines = new Vendor[3];
+    
+    machines[0] = new Vendor(45, 5)
+    
+  }
+
+}

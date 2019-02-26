@@ -105,13 +105,153 @@ public class Picture extends SimplePicture
   
   }
   
+  private void negate(){
+  
+    Pixel [][] noBlue = this.getPixels2D();
+    for(Pixel [] row : noBlue)
+    for(Pixel individualPixel : row) {
+        individualPixel.setRed(255 - individualPixel.getRed());
+        individualPixel.setGreen(255 - individualPixel.getGreen());
+        individualPixel.setBlue(255 - individualPixel.getBlue());
+    }
+        
+  
+  }
+  
+  private void greyscale(){
+  
+    Pixel [][] noBlue = this.getPixels2D();
+    int average = 0;
+    for(Pixel [] row : noBlue)
+    for(Pixel individualPixel : row) {
+        average = (individualPixel.getRed() + individualPixel.getGreen() + individualPixel.getBlue())/3;
+        individualPixel.setRed(average);
+        individualPixel.setGreen(average);
+        individualPixel.setBlue(average);
+    }
+        
+  
+  }
+  
+  private void mirrorHorizontal(){
+  
+    Pixel [][] pixels = this.getPixels2D();
+    
+    Pixel topPixel = null;
+    
+    Pixel bottomPixel = null;
+    
+    int height = pixels.length;
+    
+    for(int row = 0; row < height/2; row++){
+    
+      for(int col = 0; col < pixels[0].length; col++){
+      
+        topPixel = pixels[row][col];
+        
+        bottomPixel = pixels[height - 1 - row][col];
+        
+        topPixel.setColor(bottomPixel.getColor());
+      
+      }
+    
+    }
+  
+  }
+  
+  private void mirrorDiagonal(){
+  
+    Pixel [][] pixels = this.getPixels2D();
+    
+    Pixel topPixel = null;
+    
+    Pixel bottomPixel = null;
+    
+    int height = pixels.length;
+    
+    for(int row = 0; row < height/2; row++){
+    
+      for(int col = 0; col < pixels[0].length; col++){
+      
+        pixel = pixels[row][col];
+      
+        if(col < (pixels[col].length)/2 && row < (pixels[row].length)/2){
+          
+          pixel.setRed(pixels[row * 2][col * 2].getRed());
+          pixel.setGreen(pixels[row * 2][col * 2].getGree());
+          pixel.setBlue(pixels[row * 2][col * 2].getRed());
+          
+        }
+      
+      }
+    
+    }
+  
+  }
+  
+  private void checker(){
+  
+    Pixel [][] pixels = this.getPixels2D();
+    
+    Pixel pixel = null;
+    
+    for(int row = 0; row < pixels.length; row++){
+    
+      for(int col = 0; col < pixels[row].length; col++){
+      
+        if(row % 2 == 0 && col % 2 == 0){
+          
+          pixel = pixels[row][col];
+        
+          pixel.setRed(0);
+          pixel.setGreen(0);
+          pixel.setBlue(0);
+        
+        }
+      
+      }
+    
+    }
+  
+  }
+  
+  private void halfBlack(){
+  
+    Pixel [][] pixels = this.getPixels2D();
+    
+    Pixel pixel = null;
+    
+    for(int row = 0; row < pixels.length; row++){
+    
+      for(int col = 0; col < pixels[row].length; col++){
+        
+        pixel = pixels[row][col];
+      
+        if(col < (pixels[row].length)/2){
+          
+          pixel.setRed(0);
+          pixel.setGreen(0);
+          pixel.setBlue(0);
+          
+        }
+      
+      }
+    
+    }
+  
+  }
+  
   /* Main method for testing - each class in Java can have a main method 
    */
   public static void main(String[] args) {
     
     Picture beach = new Picture("beach.jpg");
-    beach.keepOnlyBlue();
+    //beach.mirrorHorizontal();
+    beach.mirrorDiagonal();
     beach.explore();
+    Picture arch = new Picture("arch.jpg");
+    arch.mirrorDiagonal();
+    arch.explore();
     DigitalPicture p = new Picture();
     /*DigitalPicture photo = new Picture();
     SimplePicture photo2 = new Picture("beach.jpg");

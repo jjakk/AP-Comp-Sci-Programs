@@ -1,0 +1,63 @@
+public class Coins{
+  
+  private int cents;
+  
+  public Coins(int c){
+    
+    cents = c;
+    
+  }
+  
+  public int getQuarters(){ return cents/25;}
+  public int getNickels(){ return cents/5;}
+  public int getDimes(){ return cents/10;}
+  public int getPennies(){ return cents;}
+  
+  public String toString(){
+    
+    int quarters = cents/25;
+    
+    int nickels = 0;
+    
+    int dimes = 0;
+    
+    int pennies = 0;
+  
+    if(cents % 25 != 0){
+    
+      dimes = (cents % 25) / 10;
+      
+      if((cents % 25) % 10 != 0){
+      
+        nickels = ((cents % 25) % 10) / 5;
+        
+        if(((cents % 25) % 10) % 5 != 0){
+        
+          pennies = ((cents % 25) % 10) % 5;
+        
+        }
+      
+      }
+    
+    }
+    
+    return "That's " + quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, and " + pennies + " pennies."; 
+  
+  }
+  
+  public static void main(String [] args){
+    
+    Coins coin = new Coins(283);
+    
+    System.out.println(283 + " quarters");
+    
+    System.out.println(coin);
+    
+    /*System.out.println("That's " + coin.getQuarters() + " quarters.");
+    System.out.println("That's " + coin.getNickels() + " nickels.");
+    System.out.println("That's " + coin.getDimes() + " dimes.");
+    System.out.println("That's " + coin.getPennies() + " pennies.");*/
+    
+  }
+  
+}

@@ -5,38 +5,102 @@ public class ArrayPractice3{
 
   public static void main(String [] args){
     
+    String [] words = new String[14];
+    
     Scanner scan = new Scanner(System.in);
     
-    String [] mainArray = new String[14];
+    String current;
+    
+    ArrayPractice3 object = new ArrayPractice3();
+    
+    boolean gotten = false;
+    
+    for(int i = 0; i < 14; i++){
+    
+      System.out.println("Enter a word to add : ");
+      
+      current = scan.nextLine();
+      
+      object.insert(current);
+      
+      object.refresh();
+      
+      object.print();
+    
+    }
+    
+  }
   
-    for(int i = 0; i < mainArray.length; i++) mainArray[i] = "";
+  public String [] mainArray = {"", "", "", "", "", "", "", "", "", "", ""};
+  
+  public String [] newArry = new String[11];
+  
+  public void refresh(){
+     
+     for(int i = 0; i < mainArray.length; i++){
+       
+       newArry[i] = mainArray[i];
+       
+     }
+     
+   }
+   
+  //Methods
+  
+  public void print(){
+  
+    for(int i = 0; i < newArry.length; i++){
     
-    String word = "";
+      if(i != newArry.length) System.out.print(newArry[i] + ", ");
+      
+    }
     
+    System.out.println();
+  
+  }
+  
+  public void insert(String newStr){
+    
+    boolean gotten = false;
+    
+    boolean inserted = false;
+  
     for(int i = 0; i < mainArray.length; i++){
       
-      for(int j = 0;j < mainArray.length; j++){
-      
-        if(!mainArray[j].equals("")){
+      if(!inserted){
         
-          System.out.print(mainArray[i] + " ");
+        if(mainArray[i] == ""){
+          
+          mainArray[i] = newStr;
+          
+          inserted = true;
+          
+        }
+        
+        else if(mainArray[i].compareTo(newStr) > 0){
+          
+          gotten = false;
+          
+          for(int j = i; j < mainArray.length; j++){
+          
+            if(j != mainArray.length - 1 && j != mainArray.length && !gotten){
+              
+              mainArray[j + 1] = mainArray[j];
+              
+              gotten = true;
+            
+            }
+          
+          }
+          
+          gotten = false;
+            
+           mainArray[i] = newStr;
+          
+          inserted = true;
         
         }
-      
-      }
-    
-      System.out.print("Enter a word : ");
-      
-      word = scan.nextLine();
-      
-      for(int k = 0; k < mainArray.length; k++){
-      
-        if(word.compareTo(mainArray[k]) > 0){
         
-          mainArray[k] = word;
-        
-        }
-      
       }
     
     }

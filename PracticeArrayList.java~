@@ -1,0 +1,13 @@
+public class PracticeArrayList{
+
+  public static void main(String [] args){
+  
+    ArrayList<String> nameList = new ArrayList<String>();
+    
+    nameList.add("bob");
+    nameList.add("frank");
+    nameList.add("larry");
+  
+  }
+
+}
