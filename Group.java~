@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+public class Group{
+
+  private ArrayList <Student> groupList;
+  
+  public Group(String people){
+  
+    groupList = new ArrayList <Student> ();
+    
+    int index = 0;
+    
+    int space = people.indexOf(" ");
+    
+    String next;
+    
+    do{
+    
+      next = people.substring(index, space);
+      
+      groupList.add(new Student(next));
+      
+      people = people.substring(space + 1);
+      
+      space = 1;
+    
+    }while(people.length() > 0)
+  
+  }
+
+}

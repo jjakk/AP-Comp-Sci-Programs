@@ -1,0 +1,19 @@
+public class trickery{
+
+  public static m(int m){
+  
+    for(int i = m; i > 0){
+    
+      for(int j = i; j > 0){
+      
+        System.out.print("*");
+      
+      }
+      
+      System.out.println();
+    
+    }
+  
+  }
+
+}
