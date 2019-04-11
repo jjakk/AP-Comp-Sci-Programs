@@ -7,7 +7,7 @@ public class Group{
   
     groupList = new ArrayList <Student> ();
     
-    int index = 0;
+    boolean last = false;
     
     int space = people.indexOf(" ");
     
@@ -15,15 +15,127 @@ public class Group{
     
     do{
     
-      next = people.substring(index, space);
+      if(space < 0){
       
-      groupList.add(new Student(next));
+        space = people.length();
+        
+        last = true;
       
-      people = people.substring(space + 1);
+      }
       
-      space = 1;
+      next = people.substring(0, space);
+      
+      groupList.add(findPlace(next), new Student(next));
+      
+      //System.out.println(groupList);
+      
+      if(!last){
+        
+        people = people.substring(space + 1);
+        
+      }
+        
+        space = people.indexOf(" ");
     
-    }while(people.length() > 0)
+    }while(!last);
+  
+  }
+  
+  public ArrayList<Student> getGroupList (){return groupList;}
+  
+  int place = 0;
+  
+  public int findPlace(String n){
+    
+    for(place = 0 ; place < groupList.size(); place++){
+    
+      if(n.compareTo(groupList.get(place).getName()) < 0){
+      
+        return place;
+      
+      }
+    
+    }
+    
+    return place;
+    
+  }
+  
+  public void printList(){
+    
+    //This is a sequental search
+    
+    for(Student current : groupList){
+    
+      System.out.print(current + " ");
+      
+      /*if(current.getName().equals("Danny")){
+      
+        System.out.println("I found danny");
+        
+        break;
+      
+      }*/
+    
+    }
+    
+  }
+  
+  public boolean sequentialSearch(String n){
+  
+    for(Student current : groupList){
+      
+      if(current.getName().equals(n)){
+      
+        return true;
+      
+      }
+    
+    }
+    
+    return false;
+  
+  }
+  
+  public int binarySearch(String n){
+    
+    int left = 0;
+    
+    int right = groupList.size();
+    
+    int middle = (right + left)/2;
+    
+    String next;
+    
+    while(left < right){
+      
+      middle = (right + left)/2;
+    
+      System.out.print("Left : " + left + " Right : " + right + " ");
+      
+      next = groupList.get(middle).getName();
+      
+      if(n.compareTo(next) < 0){
+      
+        right = middle;
+      
+      }
+      
+      else if(n.compareTo(next) > 0){
+      
+        left = middle + 1;
+      
+      }
+      
+      else{
+      
+        return middle;
+      
+      }
+    
+    }
+  
+    return -1;
   
   }
 

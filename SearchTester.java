@@ -8,7 +8,16 @@ public class SearchTester{
     
     period1.printList();
     
-    System.out.println("\nDanny is found : " + period1.sequentialSearch("Danny"));
+    System.out.println();
+    
+    period1.mixedUp();
+    
+    System.out.println("Array mixed up");
+    
+    period1.printList();
+    
+    System.out.println("\nJohn is found : " + period1.sequentialSearch("John"));
+    System.out.println("Bob is found : " + period1.sequentialSearch("Bob"));
   
   }
 
