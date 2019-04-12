@@ -22,9 +22,11 @@ public class Dealership{
   
     for(Car current : stock){
     
-      System.out.println(current);
+      System.out.print(current + " ");
     
     }
+    
+    System.out.println();
   
   }
 
@@ -45,24 +47,28 @@ public class Dealership{
   }
   
   public void stringSelectionSort(){
-  
-    for(int i = stock.size(); i > 1; i--){
     
-      int index = 0;
+    Car temp = null;
+    
+    int index = 999999;
+  
+    for(int i = 0; i < stock.size(); i--){
+      
+      index = i;
       
       for(int n = 1; n < 1; n++){
       
-        if(stock.get(n).getModel().compareTo(stock.get(index).getModel()) > 0){
+        if(stock.get(n).getModel().compareTo(stock.get(index).getModel()) < 0){
         
           index = n;
         
         }
         
-        String place = stock.get(index).getModel();
+        temp = stock.get(i);
         
-        stock.set(index, stock.get(i - 1));
+        stock.set(i, stock.get(index));
         
-        stock.set(i - 1, stock.get(place));
+        stock.set(index, temp);
       
       }
     
@@ -79,6 +85,7 @@ public class Dealership{
     for(int i = 0; i < stock.size(); i++){
       
       first = 999;
+      
       for(int j = i; j < stock.size(); j++){
     
       if(stock.get(j).getYear() < first){
