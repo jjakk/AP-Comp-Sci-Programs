@@ -7,6 +7,8 @@ public class Dealership{
   public ArrayList<Car> stock;
   
   public Dealership(String [] models, int [] years){
+    
+    stock = new ArrayList<Car>();
   
     for(int i = 0 ; i < models.length; i++){
     
@@ -42,7 +44,31 @@ public class Dealership{
   
   }
   
-  public void stringSelectionSort(){}
+  public void stringSelectionSort(){
+  
+    for(int i = stock.size(); i > 1; i--){
+    
+      int index = 0;
+      
+      for(int n = 1; n < 1; n++){
+      
+        if(stock.get(n).getModel().compareTo(stock.get(index).getModel()) > 0){
+        
+          index = n;
+        
+        }
+        
+        String place = stock.get(index).getModel();
+        
+        stock.set(index, stock.get(i - 1));
+        
+        stock.set(i - 1, stock.get(place));
+      
+      }
+    
+    }
+  
+  }
   
   public void intSelectionSort(){
   
@@ -51,17 +77,21 @@ public class Dealership{
     Car temp = null;
     
     for(int i = 0; i < stock.size(); i++){
-    
-      if(stock.get(i).getYear() < first){
       
-        first = stock.get(i).getYear();
+      first = 999;
+      for(int j = i; j < stock.size(); j++){
+    
+      if(stock.get(j).getYear() < first){
+      
+        first = stock.get(j).getYear();
         
-        temp = stock.get(i);
+        temp = stock.get(j);
         
-        stock.set(i, stock.get(i));
+        stock.set(j, stock.get(i));
         
         stock.set(i, temp);
       
+      }
       }
     
     }
