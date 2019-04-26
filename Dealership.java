@@ -48,31 +48,33 @@ public class Dealership{
   
   public void stringSelectionSort(){
     
-    Car temp = null;
+    int index = 0;
     
-    int index = 999999;
-  
-    for(int i = 0; i < stock.size(); i--){
+    ArrayList<Car> tempArray = new ArrayList<Car>();
+    
+    int go = stock.size();
+    
+    for(int i = 0; i < go; i++){
       
-      index = i;
+      index = 0;
+    
+      for(int j = 0; j < stock.size(); j++){
       
-      for(int n = 1; n < 1; n++){
-      
-        if(stock.get(n).getModel().compareTo(stock.get(index).getModel()) < 0){
-        
-          index = n;
+        if(stock.get(j).getModel().compareTo(stock.get(index).getModel()) < 0){
+          
+          index = j;
         
         }
-        
-        temp = stock.get(i);
-        
-        stock.set(i, stock.get(index));
-        
-        stock.set(index, temp);
       
       }
+      
+      tempArray.add(stock.get(index));
+          
+      stock.remove(index);
     
     }
+    
+    stock = tempArray;
   
   }
   
@@ -84,7 +86,7 @@ public class Dealership{
     
     for(int i = 0; i < stock.size(); i++){
       
-      first = 999;
+      first = 9999;
       
       for(int j = i; j < stock.size(); j++){
     

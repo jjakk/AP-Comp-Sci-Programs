@@ -3,10 +3,208 @@
  * Mrs. Westervelt
  * 9/21/16
  */
-public class Town
-{
-  public static void main(String [] args)
-  {
+
+import java.util.ArrayList;
+
+public class Town{
+  
+  private ArrayList<Integer> numbers;
+  
+  private ArrayList<String> streets;
+  
+  private ArrayList<String> colors;
+  
+  private ArrayList<Integer> beds;
+  
+  private ArrayList<Double> baths;
+  
+  public Town(int [] n, String [] s, String [] c, int [] be, double [] ba){
+  
+    for(int i = 0; i < n.length; i++)numbers.add(n[i]);
+    
+    for(int i = 0; i < s.length; i++)streets.add(s[i]);
+    
+    for(int i = 0; i < c.length; i++)colors.add(c[i]);
+    
+    for(int i = 0; i < be.length; i++)beds.add(be[i]);
+    
+    for(int i = 0; i < ba.length; i++)baths.add(ba[i]);
+  
+  }
+  
+  public void selectionSort(String field){
+    
+    if(field.equals("numbers")){
+    
+      intSelectionSort(numbers);
+    
+    }
+  
+    else if(field.equals("streets")){
+    
+      stringSelectionSort(streets);
+    
+    }
+    
+    else if(field.equals("colors")){
+    
+      stringSelectionSort(colors);
+    
+    }
+    
+    else if(field.equals("beds")){
+    
+      intSelectionSort(beds);
+    
+    }
+    
+    else if(field.equals("Baths")){
+    
+      doubleSelectionSort(baths);
+    
+    }
+    
+    else{
+    
+      System.out.println("Invalid input");
+    
+    }
+  
+  }
+  
+  public void stringSelectionSort(ArrayList<String> stock){
+    
+    int index = 0;
+    
+    ArrayList<String> tempArray = new ArrayList<String>();
+    
+    int go = stock.size();
+    
+    for(int i = 0; i < go; i++){
+      
+      index = 0;
+    
+      for(int j = 0; j < stock.size(); j++){
+      
+        if(stock.get(j).compareTo(stock.get(index)) < 0){
+          
+          index = j;
+        
+        }
+      
+      }
+      
+      tempArray.add(stock.get(index));
+          
+      stock.remove(index);
+    
+    }
+    
+    stock = tempArray;
+  
+  }
+  
+  public void intSelectionSort(ArrayList<Integer> stock){
+  
+    int first = 9999;
+    
+    int temp = 0;
+    
+    for(int i = 0; i < stock.size(); i++){
+      
+      first = 9999;
+      
+      for(int j = i; j < stock.size(); j++){
+    
+      if(stock.get(j) < first){
+      
+        first = stock.get(j);
+        
+        temp = stock.get(j);
+        
+        stock.set(j, stock.get(i));
+        
+        stock.set(i, temp);
+      
+      }
+      }
+    
+    }
+  
+  }
+
+  public void doubleSelectionSort(ArrayList<Double> stock){
+  
+    double first = 9999;
+    
+    double temp = 0;
+    
+    for(int i = 0; i < stock.size(); i++){
+      
+      first = 9999;
+      
+      for(int j = i; j < stock.size(); j++){
+    
+      if(stock.get(j) < first){
+      
+        first = stock.get(j);
+        
+        temp = stock.get(j);
+        
+        stock.set(j, stock.get(i));
+        
+        stock.set(i, temp);
+      
+      }
+      }
+    
+    }
+  
+  }
+  
+  public void printList(String field){
+    
+    if(field.equals("numbers")){
+    
+      for(int i = 0; i < numbers.size(); i++)System.out.print(numbers.get(i) + " ");
+    
+    }
+  
+    else if(field.equals("streets")){
+    
+      for(int i = 0; i < numbers.size(); i++)System.out.print(numbers.get(i) + " ");
+    
+    }
+    
+    else if(field.equals("colors")){
+    
+      for(int i = 0; i < numbers.size(); i++)System.out.print(numbers.get(i) + " ");
+    
+    }
+    
+    else if(field.equals("beds")){
+    
+      for(int i = 0; i < numbers.size(); i++)System.out.print(numbers.get(i) + " ");
+    
+    }
+    
+    else if(field.equals("Baths")){
+    
+      for(int i = 0; i < numbers.size(); i++)System.out.print(numbers.get(i) + " ");
+    
+    }
+    
+    else{
+    
+      for(int i = 0; i < numbers.size(); i++)System.out.print(numbers.get(i) + " ");
+    
+    }
+    
+    System.out.println();
+  
+  }
+  
+  public static void main(String [] args){
     House sally = new House(18, "Mayflower Rd", "gray", 3, 2);
     House billy = new House(21, "Mayflower Rd");
     
