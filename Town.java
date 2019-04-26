@@ -58,7 +58,7 @@ public class Town{
     
     }
     
-    else if(field.equals("Baths")){
+    else if(field.equals("baths")){
     
       doubleSelectionSort(baths);
     
