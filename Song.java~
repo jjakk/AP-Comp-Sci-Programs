@@ -1,45 +1,68 @@
-/* This is a program to keep track of songs
- * John Khachian
- * 10/1/18
-*/
+/* 
+ * Creates a song 
+ * Ted Roberts
+ * 10/1/2018
+ */
 public class Song{
+   //fields
+   String title; 
+   String artist;
+   double length;
+   
+   //constructors
+   public Song(String t, String a, double l){
+     title = t; 
+     artist = a;
+     length = l;
+   }
+   
+   public Song(){
+     title = null; 
+     artist = null;
+     length = 0;
+   }
+   
+   //methods
+   //acessor methods
+   public String getTitle(){  return title;  }
+   
+   public String getArtist(){  return artist;  }
   
-  //Fields
-  
-  String title;
-  
-  String artist;
-  
-  double length;
-  
-  //Constructor
+   public double getLength(){  return length;  }
+   
+   public String toString(){  return "\"" +title + "\" by " + artist + ", " + length;  }
+   
+   //mutator methods
+   public void changeTitle (String t){  title = t;  }
 
-  public Song(String t, String a, double l){
-  
-    title = t;
-    
-    artist = a;
-    
-    length = l;
-  
-  }
-  
-  //methods
-  
-  //Mutators
-  
-  public void changeTitle(String t){title = t;}
-  public void changeArtist(String a){artist = a;}
-  public void changeLength(double l){length = l;}
-  
-  //Accessors
-  
-  public String getTitle(){return title;}
-  public String getArtist(){return artist;}
-  public double getLength(){return length;}
-  
-  //toString
-  
-  public String toString(){return title + ", " + artist + ", " + length;}
+   public void changeArtist (String a){  artist = a;  }
 
-}
+   public void changeLength (double l){  length = l;  } 
+   
+   public String [] stringSort(String [] inputArry){
+     
+     int min = 0;
+     
+     int max = inputArry.length;
+     
+     String [] newArry = new String[inputArry.length][inputArry.length];
+   
+     for(int i = 0; i < inputArry.length; i++){
+     
+       if(i % 2 == 1){
+       
+         if(inputArry[i].compareTo(inputArry[i - 1]) > 0){
+         
+           newArry[i] = inputArry[i];
+           
+           newArry[i - 1] = inputArry[i - 1];
+         
+         }
+       
+       }
+     
+     }
+   
+   }
+   
+ }
